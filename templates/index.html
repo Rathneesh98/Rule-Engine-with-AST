@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Engine</title>
+    <script src ="scripts.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .container {
+            width: 48%;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #results {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            height: 200px;
+            overflow-y: auto;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rule Engine with AST  </h1>
+
+        <!-- Form to add a single rule -->
+        <h2>Add Rule</h2>
+        <form id="add-rule-form">
+            <label for="rule">Rule:</label><br>
+            <textarea id="rule" name="rule" rows="4" placeholder="Enter your rule here"></textarea><br>
+            <input type="submit" value="Add Rule">
+        </form>
+
+        <!-- Form to evaluate a single rule -->
+        <h2>Evaluate Rule</h2>
+        <form id="evaluate-rule-form">
+            <label for="rule-to-evaluate">Rule:</label><br>
+            <textarea id="rule-to-evaluate" name="rule" rows="4" placeholder="Enter rule or select from the list below"></textarea><br>
+
+            <select id="rule-name-evaluate">
+                <option value="">Select a rule from the database</option>
+            </select><br><br>
+
+            <label for="data">Data (JSON format):</label><br>
+            <textarea id="data" name="data" rows="4" placeholder='Enter data here in JSON format, e.g., {"age": 25, "department": "Sales"}'></textarea><br>
+            <input type="submit" value="Evaluate Rule">
+        </form>
+    </div>
+
+    <div class="container">
+        <!-- Form to combine multiple rules -->
+        <h2>Combine Rules</h2>
+        <form id="combine-rules-form">
+            <label for="rules">Rules (Enter multiple rules separated by new lines):</label><br>
+            <textarea id="rules" name="rules" rows="4" placeholder="Enter rules here"></textarea><br>
+
+            <select id="rule-names-combine" multiple>
+                <option value="">Select rules from the database</option>
+            </select><br><br>
+
+            <input type="submit" value="Combine Rules">
+        </form>
+
+        <div id="results"></div>
+    </div>
+</body>
+</html>
