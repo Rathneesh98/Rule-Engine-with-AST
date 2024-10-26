@@ -19,7 +19,7 @@ A simple Flask-based rule engine application(Simple UI, API and Backend, Data) t
 
    ```bash
    git clone https://github.com/Bhanuu01/flask-rule-engine.git
-   cd flask-rule-engine
+   
 
 2. **Install the required packages:**
    
